@@ -402,7 +402,7 @@ void hookedAudioInit(initClass *cls, uint64_t unk, uint64_t unk2)
 		dprintf("" DLL_NAME_IN_LOG ": mutex init\n");
 		//divaAudCls->mixer->volume_mutex = 0;
 		//DebugBreak();
-		int ret = _Mtx_init((_Mtx_t*)divaAudCls->mixer->volume_mutex, 2);
+		//int ret = _Mtx_init((_Mtx_t*)divaAudCls->mixer->volume_mutex, 2);
 		//InitializeCriticalSection(divaAudCls->mixer->volume_mutex);
 		//dprintf("" DLL_NAME_IN_LOG ": %lx\n", ret);
 	}
