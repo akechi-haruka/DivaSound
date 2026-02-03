@@ -7,8 +7,8 @@
 #include <vector>
 #include <thread>
 #define MINIAUDIO_IMPLEMENTATION
-#include <miniaudio.h>
-#include <bassasio.h>
+#include "../miniaudio/miniaudio.h"
+#include "../bassasio/bassasio.h"
 #include <mmdeviceapi.h>
 #include <audioclient.h>
 #include "versions.h"

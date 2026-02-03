@@ -11,7 +11,10 @@
 //#define FGO1100
 //#define KCA730
 //#define KCA731
-#define KCA740
+//#define KCA740
+//#define KCA751
+#define KCA760
+//#define FGO1151
 
 #ifdef KCA680
 
@@ -273,5 +276,100 @@
 // IDA: divaAudioInit + 0x284, should be: 0F 84 22 02 00 00       jz      loc_1412327BC
 #define earlyReturnPtr 0x1412E3C84
 
+
+#endif
+
+#ifdef KCA751
+
+#define HOOKVERSION STR_(7.51)
+#define DLL_NAME_IN_LOG STR_(BoatToot)
+
+// IDA: import xref search for CoCreateInstance, rclsid.Data1 = 0x0BCDE0395
+#define divaAudioInitPtr 0x1412E5790
+
+// IDA: binary search for 4C 8B 74 24 38 F3 44 0F 10 44 24 2C F3 44 0F 10 4C 24 28 F3 0F 10 7C 24 24 F3 0F 10 74 24 20 48 8B 74 24 40 48 8B 7C 24 48 4C 8B 64 24 30
+#define divaAudioFillbufferPtr 0x1412E61C0
+
+// IDA: binary search for 45 8B C6 BA 50 00 00 00 48 8B CE
+#define divaAudioAllocMixerPtr 0x1412E54C0
+
+// IDA: search for string SOUND_VOLUME then look directly below
+#define stereoPtr 0x1419F1760
+
+// IDA: divaAudioInit + 0x193, should be: call    qword ptr [rax+38h]
+#define skipAudioCheckPtr 0x1412E5923
+
+// IDA: divaAudioInit + 0x1E3, should be: jb      loc_141232400
+#define skipAudioCheckPtr2 0x1412E5973
+
+// IDA: divaAudioInit + 0x202, should be: cmp     word ptr [rbx+2], 0
+#define skipAudioCheckPtr3 0x1412E5992
+
+// IDA: divaAudioInit + 0x284, should be: 0F 84 22 02 00 00       jz      loc_1412327BC
+#define earlyReturnPtr 0x1412E5A14
+
+
+#endif
+
+#ifdef KCA760
+
+#define HOOKVERSION STR_(7.60)
+#define DLL_NAME_IN_LOG STR_(BoatToot)
+
+// IDA: import xref search for CoCreateInstance, rclsid.Data1 = 0x0BCDE0395
+#define divaAudioInitPtr 0x1412E5520
+
+// IDA: binary search for 4C 8B 74 24 38 F3 44 0F 10 44 24 2C F3 44 0F 10 4C 24 28 F3 0F 10 7C 24 24 F3 0F 10 74 24 20 48 8B 74 24 40 48 8B 7C 24 48 4C 8B 64 24 30
+#define divaAudioFillbufferPtr 0x1412E5F50
+
+// IDA: binary search for 45 8B C6 BA 50 00 00 00 48 8B CE
+#define divaAudioAllocMixerPtr 0x1412E5250
+
+// IDA: search for string SOUND_VOLUME then look directly below
+#define stereoPtr 0x1419F17A0
+
+// IDA: divaAudioInit + 0x193, should be: call    qword ptr [rax+38h]
+#define skipAudioCheckPtr 0x1412E56B3
+
+// IDA: divaAudioInit + 0x1E3, should be: jb      loc_141232400
+#define skipAudioCheckPtr2 0x1412E5703
+
+// IDA: divaAudioInit + 0x202, should be: cmp     word ptr [rbx+2], 0
+#define skipAudioCheckPtr3 0x1412E5722
+
+// IDA: divaAudioInit + 0x284, should be: 0F 84 22 02 00 00       jz      loc_1412327BC
+#define earlyReturnPtr 0x1412E57A4
+
+
+#endif
+
+#ifdef FGO1151
+
+#define HOOKVERSION STR_(11.51)
+#define DLL_NAME_IN_LOG STR_(MusicSummoner)
+
+// IDA: import xref search for CoCreateInstance, rclsid.Data1 = 0x0BCDE0395
+#define divaAudioInitPtr 0x140D399E0
+
+// IDA: (FGO) binary search for B8 00 80 FF FF EB 07, take the one with a lot of ADDITIONAL FUNCTION
+#define divaAudioFillbufferPtr 0x140D3A470
+
+// IDA: (FGO) binary search for 48 C7 40 C8 FE FF FF FF 48 89 58 10 48 89 68 18 48 89 70 20 4D
+#define divaAudioAllocMixerPtr 0x140D396F0
+
+// IDA: search for string SOUND_VOLUME then look directly below
+#define stereoPtr 0x1414D7DC0
+
+// IDA: divaAudioInit + 0x193, should be: call    qword ptr [rax+38h]
+#define skipAudioCheckPtr 0x140D39B6E
+
+// IDA: divaAudioInit + 0x1E3, should be: jb      loc_141232400
+#define skipAudioCheckPtr2 0x140D39BBE
+
+// IDA: divaAudioInit + 0x202, should be: cmp     word ptr [rbx+2], 0
+#define skipAudioCheckPtr3 0x140D39BD7
+
+// IDA: divaAudioInit + 0x284, should be: 0F 84 22 02 00 00       jz      loc_1412327BC
+#define earlyReturnPtr 0x140D39C76
 
 #endif

@@ -1,12 +1,12 @@
 #include "framework.h"
-#include <detours.h>
-#pragma comment(lib, "detours.lib")
+#include "../detours/include/detours.h"
+#pragma comment(lib, "detours/lib/detours.lib")
 
 #include <windows.h>
 #include <iostream>
 #include <vector>
 #include <strsafe.h>
-#include <bassasio.h>
+#include "../bassasio/bassasio.h"
 #include <shellapi.h>
 #include <xthreads.h>
 
