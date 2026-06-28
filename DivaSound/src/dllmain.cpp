@@ -521,7 +521,9 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 		}
 
 		// skip some thread deinitialisation stuff I don't care about
-		//InjectCode((void*)0x0000000140625F42, { 0xEB, 0x29 });
+#ifdef threadJoinFailure
+		NopBytes((void*)threadJoinFailure, 11);
+#endif
     
 		DisableThreadLibraryCalls(hModule);
 		DetourTransactionBegin();

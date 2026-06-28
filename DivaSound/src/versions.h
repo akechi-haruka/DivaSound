@@ -13,8 +13,8 @@
 //#define KCA731
 //#define KCA740
 //#define KCA751
-#define KCA760
-//#define FGO1151
+//#define KCA760
+#define FGO1151
 
 #ifdef KCA680
 
@@ -198,6 +198,9 @@
 // IDA: divaAudioInit + 0x284, should be: 0F 84 22 02 00 00       jz      loc_1412327BC
 #define earlyReturnPtr 0x140D35D56
 
+// IDA: only reference to // IDA: only reference to msvcp140__Thrd_join
+#define threadJoinFailure 0x140266A3A 
+
 #endif
 
 #ifdef KCA730
@@ -371,5 +374,8 @@
 
 // IDA: divaAudioInit + 0x284, should be: 0F 84 22 02 00 00       jz      loc_1412327BC
 #define earlyReturnPtr 0x140D39C76
+
+// IDA: only reference to msvcp140__Thrd_join
+#define threadJoinFailure 0x140266D1A 
 
 #endif
